@@ -8,7 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="github_red">#FC8686</color>
-    <color name="github_green">#B7E6B9</color>
+    <color name="github_blue">#ddf4ff</color>
+    <color name="github_red">#ffe7e5</color>
+    <color name="github_green">#dafbe1</color>
+    <color name="github_grey">#f4f6f8</color>
 
 </resources>

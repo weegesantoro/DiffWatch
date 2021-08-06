@@ -27,6 +27,12 @@ class PatchMatrixVM(val commitFile: CommitFile, val patchMatrix: PatchMatrix): V
             patchMatrix.patchTextLeft != null && patchMatrix.patchTextLeft.startsWith("-") -> {
                 R.color.github_red
             }
+            patchMatrix.patchTextLeft != null && patchMatrix.patchTextLeft.startsWith("@@ -") -> {
+                R.color.github_blue
+            }
+            patchMatrix.patchTextLeft == null && patchMatrix.patchTextRight != null -> {
+                R.color.github_grey
+            }
             else -> {
                 R.color.white
             }
@@ -37,6 +43,12 @@ class PatchMatrixVM(val commitFile: CommitFile, val patchMatrix: PatchMatrix): V
         return when {
             patchMatrix.patchTextRight != null && patchMatrix.patchTextRight.startsWith("+") -> {
                 R.color.github_green
+            }
+            patchMatrix.patchTextLeft != null && patchMatrix.patchTextLeft.startsWith("@@ -") -> {
+                R.color.github_blue
+            }
+            patchMatrix.patchTextRight == null && patchMatrix.patchTextLeft != null -> {
+                R.color.github_grey
             }
             else -> {
                 R.color.white

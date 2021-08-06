@@ -70,6 +70,11 @@ class CommitDetails : Fragment() {
         }
 
 
+        binding.backButton.setOnClickListener {
+            activity?.onBackPressed()
+        }
+
+
 
         return root
     }

@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import com.example.diffwatch.R
 import com.example.diffwatch.adapters.CommitListListener
 import com.example.diffwatch.adapters.CommitsAdapter
+import com.example.diffwatch.data.models.files.required.CommitFiles
 import com.example.diffwatch.databinding.PullDetailsFragmentBinding
 
 class PullDetails : Fragment() {
@@ -57,10 +58,15 @@ class PullDetails : Fragment() {
             }
         }
 
+        binding.backButton.setOnClickListener {
+            activity?.onBackPressed()
+        }
+
 
 
         return root
     }
+
 
 
     override fun onDestroyView() {
