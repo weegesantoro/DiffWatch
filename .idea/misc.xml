@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/background_circle.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/background_half_round.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/background_half_round_fill.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/background_round_filled_blue.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/background_round_grey_fill.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/background_round_outline.xml" value="0.5703125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/background_round_outline_dark.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/background_square.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/codescan.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/diffwatchminus.xml" value="0.5703125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/diffwatchplus.xml" value="0.5703125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/diffwatchsolo.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/file_diff.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/git_commit.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/git_pull_request.xml" value="0.5703125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/git_pull_request_grey.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/ic_baseline_blur_circular_24.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/ic_round_arrow_back_ios_new_24.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/ic_round_arrow_forward_ios_24.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/repo.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/drawable/telescope.xml" value="0.5203125" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/activity_main.xml" value="0.5041666666666667" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/commit_details_fragment.xml" value="0.5" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/commit_details_test.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/commits_list_item.xml" value="0.67" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/file_diff_list_item.xml" value="0.67" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/file_header.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/file_list_item.xml" value="0.5041666666666667" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/file_list_item_single.xml" value="0.5041666666666667" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/fragment_dashboard.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/fragment_home.xml" value="0.5041666666666667" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/fragment_notifications.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/fragment_pull_requests.xml" value="0.5" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/launch_screen_fragment.xml" value="0.5" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/pull_details_fragment.xml" value="0.5" />
+        <entry key="..\:/Users/weege/AndroidStudioProjects/DiffWatch/app/src/main/res/layout/pulls_list_item.xml" value="0.5041666666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

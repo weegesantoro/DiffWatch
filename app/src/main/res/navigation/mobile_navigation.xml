@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/pullRequests">
+
+
+
+    <fragment
+        android:id="@+id/launchScreen"
+        android:name="com.example.diffwatch.ui.onboarding.LaunchScreen"
+        android:label="launch_screen_fragment"
+        tools:layout="@layout/launch_screen_fragment" >
+        <action
+            android:id="@+id/action_launchScreen_to_pullRequests"
+            app:destination="@id/pullRequests"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/pullRequests"
+        android:name="com.example.diffwatch.ui.pulls.PullRequests"
+        android:label="fragment_pull_requests"
+        tools:layout="@layout/fragment_pull_requests" >
+        <action
+            android:id="@+id/action_pullRequests_to_pullDetails"
+            app:destination="@id/pullDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/commitDetails"
+        android:name="com.example.diffwatch.ui.pulls.CommitDetails"
+        android:label="commit_details_fragment"
+        tools:layout="@layout/commit_details_fragment" />
+    <fragment
+        android:id="@+id/pullDetails"
+        android:name="com.example.diffwatch.ui.pulls.PullDetails"
+        android:label="pull_details_fragment"
+        tools:layout="@layout/pull_details_fragment" >
+        <action
+            android:id="@+id/action_pullDetails_to_commitDetails"
+            app:destination="@id/commitDetails" />
+    </fragment>
+
+</navigation>
