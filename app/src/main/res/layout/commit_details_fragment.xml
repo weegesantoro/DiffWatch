@@ -53,7 +53,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/textView3"
+                            android:id="@+id/commit_message"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
@@ -61,7 +61,7 @@
                             android:textColor="#434343"
                             android:textSize="13sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/pr_number_extra"
+                            app:layout_constraintBottom_toTopOf="@+id/commit_author"
                             app:layout_constraintStart_toEndOf="@+id/imageView8"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_chainStyle="packed" />
@@ -98,7 +98,7 @@
                             android:src="@drawable/file_diff"
                             android:visibility="gone"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/textView3"
+                            app:layout_constraintStart_toEndOf="@+id/commit_message"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
@@ -116,7 +116,7 @@
 
 
                         <TextView
-                            android:id="@+id/pr_number_extra"
+                            android:id="@+id/commit_author"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
@@ -124,19 +124,19 @@
                             android:textSize="10sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="@+id/textView3"
-                            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                            app:layout_constraintStart_toStartOf="@+id/commit_message"
+                            app:layout_constraintTop_toBottomOf="@+id/commit_message" />
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/commit_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:text="committed on Jun 29 "
                             android:textSize="10sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/pr_number_extra"
-                            app:layout_constraintStart_toEndOf="@+id/pr_number_extra"
-                            app:layout_constraintTop_toTopOf="@+id/pr_number_extra" />
+                            app:layout_constraintBottom_toBottomOf="@+id/commit_author"
+                            app:layout_constraintStart_toEndOf="@+id/commit_author"
+                            app:layout_constraintTop_toTopOf="@+id/commit_author" />
 
                         <Button
                             android:id="@+id/back_button"
@@ -146,7 +146,7 @@
                             android:layout_marginEnd="12dp"
                             android:background="@android:color/transparent"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-                            app:layout_constraintEnd_toStartOf="@+id/textView3"
+                            app:layout_constraintEnd_toStartOf="@+id/commit_message"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="@+id/imageView6"
                             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -160,13 +160,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="72dp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView9"
+                        app:layout_constraintTop_toBottomOf="@+id/commit_sha"
                         tools:itemCount="7"
                         tools:listitem="@layout/file_diff_list_item" />
 
@@ -226,7 +227,7 @@
                         app:layout_constraintTop_toTopOf="@+id/repo_constraint" />
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/commit_sha"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -247,6 +248,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/background_round_filled_blue"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/split_button"
                 app:layout_constraintEnd_toEndOf="@+id/split_button"
                 app:layout_constraintStart_toStartOf="@id/unify_button"
@@ -260,6 +262,7 @@
                 android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:background="@drawable/background_round_grey_fill"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/unify_tv"
                 app:layout_constraintEnd_toEndOf="@+id/unify_tv"
                 app:layout_constraintStart_toStartOf="@+id/unify_tv"
@@ -273,9 +276,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Split"
+                android:textColor="@color/white"
                 android:textSize="13sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/unify_tv"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -291,6 +295,7 @@
                 android:text="  Unify  "
                 android:textSize="13sp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/split_tv"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -303,6 +308,7 @@
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/split_tv"
                 app:layout_constraintEnd_toEndOf="@+id/split_tv"
                 app:layout_constraintStart_toStartOf="@+id/split_tv"
@@ -314,6 +320,7 @@
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/unify_tv"
                 app:layout_constraintEnd_toEndOf="@+id/unify_tv"
                 app:layout_constraintStart_toStartOf="@+id/unify_tv"

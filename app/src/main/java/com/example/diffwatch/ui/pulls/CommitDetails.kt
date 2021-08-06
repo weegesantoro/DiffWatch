@@ -8,10 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.diffwatch.adapters.FilesAdapter
-import com.example.diffwatch.adapters.PatchArrayAdapter
-import com.example.diffwatch.data.models.compare.PatchMatrix
-import com.example.diffwatch.data.models.compare.SplitViewObject
 import com.example.diffwatch.data.models.files.required.CommitFile
+import com.example.diffwatch.data.models.files.required.CommitFiles
 import com.example.diffwatch.databinding.CommitDetailsFragmentBinding
 
 
@@ -24,7 +22,6 @@ class CommitDetails : Fragment() {
     private val commitDetailsViewModel: CommitDetailsViewModel by lazy {
         ViewModelProvider(this).get(CommitDetailsViewModel::class.java)
     }
-
 
 
     //private var _binding: CommitDetailsFragmentBinding? = null
@@ -48,21 +45,9 @@ class CommitDetails : Fragment() {
         val root: View = binding.root
 
 
-
-
-
-
         //Binding files adapter to RecyclerView
         val filesAdapter = FilesAdapter()
         binding.fileDiffRecycler.adapter = filesAdapter
-
-
-
-
-
-        //Binding files adapter to RecyclerView
-        //val patchAdapter = PatchArrayAdapter()
-        //binding.fileDiffRecycler.adapter = patchAdapter
 
 
         commitDetailsViewModel.commitFiles.observe(viewLifecycleOwner, {
@@ -70,7 +55,7 @@ class CommitDetails : Fragment() {
                 if(it.files != null){
                     reconstructSplitViewStrings(it.files)
                     filesAdapter.updateList(it.files)
-                    //patchAdapter.data = it.patchMatrixList
+                    setPageValues(it)
                 }
 
             }
@@ -79,7 +64,6 @@ class CommitDetails : Fragment() {
         })
 
         commitDetailsViewModel.commitUrl = sharedViewModel.commitUrl
-
         commitDetailsViewModel.apply {
             println("commitUrl over here = $commitUrl")
             commitUrl?.let { sendCommitDetailsRequest(it) }
@@ -91,19 +75,22 @@ class CommitDetails : Fragment() {
     }
 
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
-
-
     private fun reconstructSplitViewStrings(files: List<CommitFile>) {
         for(file in files){
             if(file.patch != null){
-                //file.splitViewObject = commitDetailsViewModel.reconstructSplitViewStrings(file.patch)
                 file.patchMatrixList = commitDetailsViewModel.reconstructSplitViewStrings(file.patch)
             }
         }
 
+    }
+
+    private fun setPageValues(commitFiles: CommitFiles) {
+        binding.apply {
+            commitMessage.text = commitFiles.commit?.message
+            commitAuthor.text = commitFiles.author?.login
+            commitDate.text = commitFiles.commit?.author?.date
+            commitSha.text = commitFiles.sha
+        }
     }
 
 
