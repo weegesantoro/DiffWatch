@@ -28,7 +28,7 @@ class LaunchScreen : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         // viewModel
         viewModel = ViewModelProvider(this).get(LaunchScreenViewModel::class.java)
@@ -41,17 +41,15 @@ class LaunchScreen : Fragment() {
             findNavController().navigate(R.id.action_launchScreen_to_pullRequests)
         }
 
-        if(!onBoarded()){
+        if(!viewModel.onBoarded){
             onboardingAnimation()
         }
         return root
     }
 
-    private fun onBoarded(): Boolean {
-        return false
-    }
 
     private fun onboardingAnimation() {
+        viewModel.onBoarded = true
         binding.apply {
 
             // pre-set alphas and visibility and location for login constraint
@@ -61,6 +59,7 @@ class LaunchScreen : Fragment() {
 
             // animate right logo
             logoRight.alpha = 0f
+            logoConstraint.visibility = View.VISIBLE
             logoRight.visibility = View.VISIBLE
             logoRight.animate().apply {
                 duration = 1
@@ -116,29 +115,43 @@ class LaunchScreen : Fragment() {
                     translationYBy(-1000f)
                 }.withEndAction {
 
-                    // animate logo up and away
-                    CoroutineScope(Dispatchers.Main).launch {
-                        delay(1000)
-                        logoConstraint.animate().apply {
-                            duration = 1000
-                            translationYBy(-1000f)
-                            alpha(0f)
-                        }.withEndAction {
-
-                            // animate login constraint up from below
-                            loginConstraint.animate().apply {
-                                duration = 1500
-                                translationYBy(-2000f)
-                                alpha(1f)
-                            }
-                        }
-                    }
+                    slideOutLogo()
 
                 }
             }
 
 
+
         }
+    }
+
+    private fun slideOutLogo(){
+        binding.apply {
+
+            // animate logo up and away
+            CoroutineScope(Dispatchers.Main).launch {
+                delay(1000)
+                logoConstraint.animate().apply {
+                    duration = 1000
+                    translationYBy(-1000f)
+                    alpha(0f)
+                }.withEndAction {
+                    logoConstraint.visibility = View.GONE
+                    // animate login constraint up from bottom
+                    slideInLogin()
+                }
+            }
+        }
+
+    }
+
+    private fun slideInLogin(){
+        binding.loginConstraint.animate().apply {
+            duration = 1500
+            translationYBy(-2000f)
+            alpha(1f)
+        }
+
     }
 
 }
